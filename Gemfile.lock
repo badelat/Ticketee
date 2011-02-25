@@ -52,6 +52,7 @@ GEM
       cucumber (>= 0.8.0)
     culerity (0.2.15)
     diff-lcs (1.1.2)
+    dynamic_form (1.1.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     ffi (0.6.3)
@@ -125,6 +126,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   cucumber-rails
+  dynamic_form
   haml
   rails (= 3.0.3)
   rspec-rails (~> 2.4)
