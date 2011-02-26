@@ -25,6 +25,7 @@ gem 'dynamic_form'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'rspec-rails', "~> 2.4"
+  gem 'factory_girl'
 end
 
 group :cucumber do
