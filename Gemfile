@@ -32,5 +32,6 @@ end
 group :cucumber do
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'email_spec'
 #   gem 'webrat'
 end
