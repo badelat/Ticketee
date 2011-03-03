@@ -2,5 +2,7 @@
 %menu
   = link_to "Edit", [:edit, @project, @ticket]
   = link_to "Delete", [@project, @ticket], method:'delete', confirm:true
-
+%small 
+  Created by
+  = @ticket.user.email
 = simple_format(@ticket.description)
