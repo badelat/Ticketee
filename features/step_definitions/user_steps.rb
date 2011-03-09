@@ -4,7 +4,16 @@ Given /^there are the following users:$/ do |table|
     unconfirmed = attributes.delete("unconfirmed")
     @user = User.create!(attributes.merge!(:password_confirmation => attributes[:password]))
     @user.confirm! if unconfirmed == 'false'
+    unless attributes["admin"] == 'false'
+      @user.admin = true 
+      @user.save
+    end
   end
+end
+
+Given /^I am signed in as "([^"]*)"$/ do |email|
+  @user = User.find_by_email(email)
+  steps("Given I am signed in as them")
 end
 
 Given /^I am signed in as them$/ do
@@ -12,9 +21,8 @@ Given /^I am signed in as them$/ do
   Given I am on the homepage
   When I follow "Sign in"
   And I fill in "Email" with "#{@user.email}"
-  And I fill in "Password" with "#{@user.password}"
+  And I fill in "Password" with "password"
   And I press "Sign in"
   Then I should see "Signed in successfully."
   })
 end
-
