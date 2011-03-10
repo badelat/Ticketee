@@ -27,6 +27,7 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails', "~> 2.4"
   gem 'factory_girl'
+  gem 'ZenTest'
 end
 
 group :cucumber do
