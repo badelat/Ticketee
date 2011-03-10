@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
   let(:project) { Factory(:project) }
-  let(:user) do
-    user = Factory(:user)
-    user.confirm!
-    user
-  end
+  let(:user) { create_user! }
 
   it "displays an error message when asked for a missing project" do
     get :show, id:"not-here"
