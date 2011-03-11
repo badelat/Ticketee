@@ -5,8 +5,8 @@ Feature: Viewing tickets
 
 	Background: 
 		Given there are the following users:
-			|email           | password | unconfirmed |
-			| user@ticketee.com | password | false |
+			|email           | password | 
+			| user@ticketee.com | password |
 		Given there is a project called "TextMate 2" 
 		And "user@ticketee.com" has created a ticket for this project:
 			| title	| description	|
@@ -15,7 +15,9 @@ Feature: Viewing tickets
 		And "user@ticketee.com" has created a ticket for this project:
 			| title	| description	| 
 			| Standards compliance | Isn't a joke. |
-
+		And "user@ticketee.com" can view the "TextMate 2" project
+		And "user@ticketee.com" can view the "Internet Explorer" project
+		And I am signed in as them
 		Given I am on the homepage
 
 	Scenario: Viewing tickets for a given project 

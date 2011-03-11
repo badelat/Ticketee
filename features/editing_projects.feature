@@ -5,8 +5,8 @@ Feature: Editing projects
 
 	Background:
 		Given there are the following users:
-			|email          | password | unconfirmed | admin |
-			|admin@ticketee.com| password | false | true |
+			|email          | password | admin |
+			|admin@ticketee.com| password | true |
 		And I am signed in as them
 		Given there is a project called "Textmate 2"
 		And I am on the homepage

@@ -3,11 +3,8 @@ Given /^there are the following users:$/ do |table|
   table.hashes.each do |attributes|
     unconfirmed = attributes.delete("unconfirmed")
     @user = User.create!(attributes.merge!(:password_confirmation => attributes[:password]))
-    @user.confirm! if unconfirmed == 'false'
-    unless attributes["admin"] == 'false'
-      @user.admin = true 
-      @user.save
-    end
+    @user.admin = true if attributes["admin"] == 'true'
+    @user.confirm! unless unconfirmed == 'true'
   end
 end
 

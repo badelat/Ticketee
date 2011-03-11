@@ -33,7 +33,7 @@ class Admin::UsersController < Admin::BaseController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end
-    #set_admin #Apparently unnecessary - update does mass assignment?!
+    set_admin 
     if @user.update_attributes(params[:user])
       redirect_to admin_users_path, notice:"User has been updated."
     else
