@@ -5,6 +5,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'dynamic_form'
 gem 'devise'
+gem 'cancan'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -27,7 +28,8 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails', "~> 2.4"
   gem 'factory_girl'
-  gem 'ZenTest'
+  gem 'ZenTest', "~> 4.4.2"
+  gem 'autotest-rails', "~> 4.1.0"
 end
 
 group :cucumber do
