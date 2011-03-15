@@ -8,4 +8,8 @@ module ApplicationHelper
     block.call if current_user && current_user.admin?
     nil
   end
+
+  def authorized?(permission, resource, &block)
+    block.call if can?(permission.to_sym, resource) || current_user.try(:admin?)
+  end
 end
